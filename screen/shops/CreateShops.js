@@ -2,15 +2,15 @@ import React from "react";
 import { View, Text, StyleSheet, Button, TouchableOpacity, Alert } from "react-native";
 
 import { FilledButton } from '../../components/FilledButton';
+import PhotoUpload from '../../components/UploadPhoto'
 
 const ScreenContainer = ({ children }) => (
     <View style={styles.container}>{children}</View>
 );
 export const CreateShops = ({ navigation }) => {
-
     return (
         <ScreenContainer>
-
+            <PhotoUpload/>
             <FilledButton
                 title={'Drawer'}
                 style={styles.loginButton}
