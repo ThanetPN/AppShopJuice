@@ -1,20 +1,38 @@
 import React from "react";
-import { View, Text, StyleSheet, Button, TouchableOpacity, Alert } from "react-native";
-
-import { FilledButton } from '../../components/FilledButton';
-import PhotoUpload from '../../components/UploadPhoto'
+import { View, Text, StyleSheet, Button, TouchableOpacity, TextInput } from "react-native";
+import PhotoUpload from '../../components/UploadPhoto';
 
 const ScreenContainer = ({ children }) => (
     <View style={styles.container}>{children}</View>
 );
-export const CreateShops = ({ navigation }) => {
+export const CreateShops = ({navigation}) => {
     return (
         <ScreenContainer>
             <PhotoUpload/>
-            <FilledButton
-                title={'Drawer'}
-                style={styles.loginButton}
-                onPress={() => navigation.toggleDrawer()}
+            <TextInput
+                style={styles.textInput}
+                place
+                holder={'NameShop'}
+            />
+            <TextInput
+                style={styles.textInput}
+                placeholder={'Location'}
+            />
+            <TextInput
+                style={styles.textInput}
+                placeholder={'DetailShop'}
+            />
+            <TextInput
+                style={styles.textInput}
+                placeholder={'Menu'}
+            />
+            <TextInput
+                style={styles.textInput}
+                placeholder={'Price'}
+            />
+            <Button
+                title='CreateShop'
+                onPress={() => navigation.navigate('DetailShops')}
             />
         </ScreenContainer>
     );
@@ -39,5 +57,21 @@ const styles = StyleSheet.create({
     },
     loginButton: {
         marginVertical: 10,
+    },
+    textInput: {
+        backgroundColor: '#fff',
+        width: '80%',
+        padding: 10,
+        borderRadius: 8,
+        color: 'black',
+        borderWidth: 1,
+    },
+    Menu: {
+        backgroundColor: '#fff',
+        width: '80%',
+        padding: 10,
+        borderRadius: 8,
+        color: 'black',
+        borderWidth: 1,
     },
 });
