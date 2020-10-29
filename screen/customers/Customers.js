@@ -36,22 +36,29 @@ export const Customers = ({ navigation }) => {
                 fontSize={20}
                 margin={10}
             />
-            <FilledButton
-                title={'เก็บแต้ม'}
-                style={styles.loginButton}
-                onPress={() => navigation.toggleDrawer()}
-            />
-            <FilledButton
-                title={'SPIN'}
-                style={styles.loginButton}
-                onPress={() => navigation.navigate('Spin')}
-            />
-            <FilledButton
-                title={'แลกแต้ม'}
-                style={styles.loginButton}
-                onPress={() => navigation.navigate('ExchangePoints')}
-            />
-            <FilledButton
+            <View style={styles.buttonLayout}>
+                <Button
+                    color='#EBE291'
+                    title={'เก็บแต้ม'}
+                    onPress={() => navigation.toggleDrawer()}
+                />
+            </View>
+            <View style={styles.buttonLayout}>
+                <Button
+                    color='#ED6451'
+                    title={'SPIN'}
+                    onPress={() => navigation.navigate('Spin')}
+                />
+            </View>
+            <View style={styles.buttonLayout}>
+                <Button
+                    color='#E9D62E'
+                    title={'แลกแต้ม'}
+                    fontSize='30'
+                    onPress={() => navigation.navigate('ExchangePoints')}
+                />
+            </View>
+            <Button
                 title={'Drawer'}
                 style={styles.loginButton}
                 onPress={() => navigation.toggleDrawer()}
@@ -61,12 +68,13 @@ export const Customers = ({ navigation }) => {
 };
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flex: 6,
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: '#fff',
     },
     button: {
+        fontSize: 25,
         paddingHorizontal: 20,
         paddingVertical: 10,
         marginVertical: 10,
@@ -80,4 +88,15 @@ const styles = StyleSheet.create({
     loginButton: {
         marginVertical: 10,
     },
+    Button: {
+        fontWeight: '500',
+        marginRight: 20
+    },
+    buttonLayout: {
+        width: '50%',
+        flexDirection: 'column',
+        marginTop: 4,
+        padding: 4,
+        borderRadius: 50,
+    }
 });

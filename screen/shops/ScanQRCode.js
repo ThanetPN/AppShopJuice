@@ -22,8 +22,8 @@ export const ScanQRCode = ({ navigation }) => {
     }, []);
 
     const handleBarCodeScanned = ({ data }) => {
-        Linking.openURL(data).catch(err =>
-            Alert.alert("Invalid QrCode", data));
+        setScanned(true);
+        alert(`${data}`)
     };
 
     if (hasPermission === null) {
@@ -40,11 +40,6 @@ export const ScanQRCode = ({ navigation }) => {
             />
             {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
 
-            <FilledButton
-                title={'Drawer'}
-                style={styles.loginButton}
-                onPress={() => navigation.toggleDrawer()}
-            />
         </ScreenContainer>
     );
 };

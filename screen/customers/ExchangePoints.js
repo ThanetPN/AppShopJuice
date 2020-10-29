@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Button, TouchableOpacity, Alert } from "react-native";
+import { View, Text, StyleSheet, Button, TouchableOpacity, Alert, } from "react-native";
 
 import { FilledButton } from '../../components/FilledButton';
 
@@ -26,9 +26,9 @@ const CircleButton = props => (
 export const ExchangePoints = ({ navigation }) => {
 
     return (
-        <ScreenContainer>
-            <Text>ชื่อร้าน: </Text>
-            <Text>สินค้า: </Text>
+        <View style={styles.container}>
+            <Text style={styles.textlayout}>ชื่อร้าน: </Text>
+            <Text style={styles.textlayout}>สินค้า: </Text>
             <CircleButton
                 text="รูปภาพ"
                 size={200}
@@ -37,17 +37,12 @@ export const ExchangePoints = ({ navigation }) => {
                 fontSize={20}
                 margin={10}
             />
-            <FilledButton
+            <Button style={styles.buttonLayout}
                 title={'แลก'}
-                style={styles.loginButton}
-                onPress={() => navigation.toggleDrawer()}
+                color="#F8E53B"
+                onPress={() => navigation.navigate('ShowResults')}
             />
-            <FilledButton
-                title={'Drawer'}
-                style={styles.loginButton}
-                onPress={() => navigation.toggleDrawer()}
-            />
-        </ScreenContainer>
+        </View>
     );
 };
 const styles = StyleSheet.create({
@@ -68,7 +63,20 @@ const styles = StyleSheet.create({
         fontFamily: "SemiBold",
         alignSelf: "center",
     },
-    loginButton: {
-        marginVertical: 10,
+    textlayout:{
+        backgroundColor: '#fff',
+        width: '80%',
+        margin:4,
+        padding: 10,
+        borderRadius: 8,
+        color: 'black',
+        borderWidth: 1,
     },
+    buttonLayout:{
+        width: '50%',
+        marginLeft: 4,
+        padding: 4,
+        borderRadius: 50,
+
+    }
 });

@@ -11,8 +11,7 @@ export const CreateShops = ({navigation}) => {
             <PhotoUpload/>
             <TextInput
                 style={styles.textInput}
-                place
-                holder={'NameShop'}
+                placeholder={'NameShop'}
             />
             <TextInput
                 style={styles.textInput}
@@ -62,6 +61,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         width: '80%',
         padding: 10,
+        margin:4,
         borderRadius: 8,
         color: 'black',
         borderWidth: 1,
